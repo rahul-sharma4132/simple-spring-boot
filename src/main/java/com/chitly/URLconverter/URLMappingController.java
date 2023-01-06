@@ -40,9 +40,7 @@ public class URLMappingController {
 	
 	@GetMapping("/{chit}")
 	public ResponseEntity<Void> redirectUsingChit(@PathVariable("chit") String chit) {
-		System.out.println(chit);
 		String mappedUrl = urlMappingService.getUrlForChit(chit);
-		System.out.println(mappedUrl);
 		
 		if (!mappedUrl.startsWith("http")) {
 			mappedUrl = "http://" + mappedUrl;
