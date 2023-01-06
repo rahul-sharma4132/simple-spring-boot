@@ -1,0 +1,9 @@
+<form action="#" th:action="@{/}" th:object="${urlMapping}" method="post">
+	<label for="url">URL To be Added</label>
+	<input type="text" th:field="*{targetUrl}" id="url" placeholder="url"> 
+	<input type="submit" value="Submit">
+	
+	<span th:if="${#fields.hasErrors('targetUrl')}" th:errors="*{targetUrl}"></span>
+	<p><a th:if="*{chit != null}">http://localhost:8080/<span th:text="*{chit}"></span></a></p>
+	
+</form>
